@@ -1,0 +1,118 @@
+//========================================================================================
+/*                                                                                      *
+ *                                   DOWNLOAD SECTION                                   *
+ *                                                                                      */
+//========================================================================================
+
+.download-section{
+    height:459px;
+
+    background-color: $dark-color;
+
+    position:relative;
+
+    overflow:hidden;
+
+    @include portrait{
+        height:426px;
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+    .container{
+        flex-direction:column;
+        position:relative;
+        z-index: 2;
+
+       
+        
+        p{
+            font-family: $titles-font-extra;
+            font-size:48px;
+            text-align: center;
+            max-width: 20ch;
+    
+            color:$light-color;
+
+            margin-bottom: 42px;
+            
+            @include portrait{
+                font-size:32px;
+            }
+          
+        }
+    
+        .download-button{
+            display:block;
+            background-color: #FFFFFF;
+            border: 2px solid #A6A6A6;
+            border-radius: 12px;
+        
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        
+            height:56px;
+            width:190px;
+        
+            margin:auto;
+            margin-bottom:90px;
+            padding: 0 25px;
+            object, img{
+                
+                width:100%;
+                pointer-events: none;
+            }
+            transition: box-shadow 0.3s ease-in-out;
+
+
+
+            &:hover{
+                box-shadow: 0 0 25px rgba(#FFFFFF, 0.3);
+            }
+
+            @include portrait{
+                margin:auto;
+                
+            }
+        }
+    }
+
+    .ripple{
+        width:1440px;
+        height:1440px;
+
+        border-radius: 50%;
+        border:1px solid rgba($primary-color, 0.5);
+
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        @include portrait{
+            width:625px;
+            height:625px;
+        }
+        .ring{
+            width: calc(100% - 261px);
+            height: calc(100% - 261px);
+            border-radius:50%;
+            border:1px solid rgba($primary-color, 0.5);
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            @include portrait{
+                width: calc(100% - 110px);
+                height: calc(100% - 110px);
+            }
+        }
+    }
+
+    
+}

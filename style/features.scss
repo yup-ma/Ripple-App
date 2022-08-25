@@ -1,0 +1,496 @@
+@import '_main.scss';
+@import '_download-section.scss';
+@import '_waitlist-section.scss';
+
+//========================================================================================
+/*                                                                                      *
+ *                                        HEADER                                        *
+ *                                                                                      */
+//========================================================================================
+
+header{
+    height:720px;
+    background: linear-gradient(180deg, rgba(#FFFFFF,1) 70%, rgba(#F6F4FB,1) 100%);
+    overflow:hidden;
+    padding-top: $header-bar-height;
+
+    @include portrait{
+
+        height: 488px;
+        padding-top: 100px;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+
+        @include portrait{
+            flex-direction: column;
+        }
+        .action-call{
+            width:50%;
+            @include portrait{
+                width:100%;
+                margin-top: 450px;
+            }
+            h1{
+                max-width: 15ch;
+            }
+
+            .download-button{ 
+                display:block;
+                background-color: #000000;
+                border: 2px solid #A6A6A6;
+                border-radius: 12px;
+            
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            
+                height:56px;
+                width:190px;
+
+                margin-top:42px;
+
+                transition: all 0.3s ease-in-out;
+
+                object, img{
+                    pointer-events: none;
+                }
+
+                &:hover{
+                    box-shadow: 0 0 25px rgba(#000000, 0.3);
+                }
+            
+                
+            }
+        }
+
+        .imgs{
+            display:flex;
+            width:50%;
+
+            margin-top:600px;
+
+            transform: rotateZ(-34.3deg) translateZ(0);
+
+            @include portrait{
+                margin-top:80px;
+                transform: rotateZ(-34.3deg) translateZ(0);
+                margin-right:130px;
+                
+            }
+            .center{
+                display:flex;
+                flex-direction:column;
+            }
+            .left, .right{
+                margin-top: 150px;
+                @include portrait{
+                    margin-top:80px;
+                }
+            }
+            img{
+                width:217px;
+                margin:15px;
+
+                box-shadow:10px 15px 30px rgba(#29292A, 0.1);
+                border-radius: 12px;
+
+                @include portrait{
+                    width:110px;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                                       SECTIONS                                       *
+ *                                                                                      */
+//========================================================================================
+
+section{
+    
+    width: 100%;
+    padding: 142px 0;
+
+    @include portrait{
+        padding: 50px 0;
+    }
+    .container{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        @include portrait{
+            flex-direction: column;
+        }
+        .text-box{
+            color:$dark-color;
+            max-width: 438px;
+            min-width:300px;
+            @include portrait{
+                order:1;
+            }
+            h2{
+                font-size:40px;
+                font-family: $titles-font-extra;
+
+                margin-bottom: 41px;
+
+                @include portrait{
+                    font-size:28px;
+                    margin-bottom: 28px;
+                }
+            }
+    
+            p{
+                font-size:18px;
+                font-family: $font;
+                line-height: 32px;
+
+                @include portrait{
+                    font-size:15px;
+                    line-height: 21px;
+                }
+            }
+        }
+        .imgs{
+            width:50%;
+            min-width:540px;
+            max-width:540px;
+            display:flex;
+            
+            justify-content: center;
+            align-items: center;
+
+            position:relative;
+
+            @media screen and (max-width: 1010px){
+                order:2;
+                margin-top: 50px;
+                width:100%;
+            }
+
+            @include portrait{
+
+                max-width:325px;
+                min-width:0;
+                
+            }
+            .screenshot{
+                width:261px;
+
+                position:relative;
+                z-index:2;
+                filter: drop-shadow(10px 15px 30px rgba(#29292A, 0.1));
+                -webkit-filter:drop-shadow(10px 15px 30px rgba(#29292A, 0.1));
+
+                @include portrait{
+                    width:157px;
+                }
+            }
+
+            .circle{
+                position:absolute;
+
+                width:480px;
+                height:480px;
+
+                border-radius: 240px;
+
+                background-color: rgba(#733DED, 0.2);
+
+                @include portrait{
+                    width:325px;
+                    height:325px;
+                }
+            }
+        }
+    }
+    
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                                       DISCOVER                                       *
+ *                                                                                      */
+//========================================================================================
+
+.discover{
+    .container{
+        position:relative;
+        .imgs{
+            height: 540px;
+            @include portrait{
+                height:325px;
+                
+            }
+            .inner{
+                width:100%;
+                height:100%;
+                display:flex;
+                justify-content: center;
+                overflow: hidden;
+                position:relative;
+
+                .circle{
+                    bottom: -240px;
+                }
+                img{
+                    object-fit: contain;
+                    position:absolute;
+                }
+            }
+
+            
+    
+            
+        }
+    
+        .icon{
+            position: absolute;
+            width:75px;
+            height:75px;
+    
+            bottom:-37px;
+            left:270px;
+            transform: translateX(-50%);
+            z-index:3;
+    
+            background-color: $primary-color;
+            border: 5px solid $light-color;
+            border-radius: 50px;
+
+            box-shadow: 0 4px 16px rgba(#000000, 0.08);
+    
+            img{
+                width:100%;
+                padding:10px;
+    
+            }
+
+            @include tablet{
+                
+                left:50%; 
+            }
+
+            @include portrait{
+                width:38px;
+                height:38px;
+
+                bottom:-19px;
+                left:50%;
+                img{
+                    padding:5px;
+                }
+                
+            }
+        }
+    }
+    
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                                       INTERACT                                       *
+ *                                                                                      */
+//========================================================================================
+
+.interact{
+    .container{
+        .imgs{
+            .fake-modal{
+                position:absolute;
+                z-index:4;
+
+                width:246px;
+                background-color: #FFFFFF;
+
+                padding: 15px 12px;
+
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                bottom: 50px;
+                right:0;
+
+                box-shadow: 0 4px 16px rgba(#000000, 0.08);
+                border-radius: 20px;
+
+                @include portrait{
+                    width:132px;
+                    padding: 10px 7px;
+                    border-radius: 10px;
+
+                    left:85%; 
+                    transform:translateX(-50%);
+                    
+                }
+
+                p{
+                    font-family: $font;
+                    font-weight: 500;
+                    color:$dark-color;
+                    max-width: 18ch;
+
+                    @include portrait{
+                        font-size: 8px;
+                    }
+                }
+                .icon{
+                    @include portrait{
+                        width:16px;
+                        height:16px;
+                        img{
+                            width:100%;
+                        }
+                    }
+                }
+                .buttons{
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 10px;
+                    width:100%;
+                }
+                .button{
+                    width:107px;
+                    height: 36px;
+
+                    border-radius: 12px;
+
+                    font-family: $font;
+                    font-weight: 600;
+
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include portrait{
+                        font-size: 8px;
+                        width:56px;
+                        height: 20px;
+                        border-radius: 6px;
+                    }
+                    &.ignore{
+                        background-color: #F2F2F7;
+                    }
+
+                    &.share{
+                        background-color: #6A38DB;
+                        color: white;
+                    }
+                }
+            }
+
+            .wave-icon{
+                position:absolute;
+                background-color: #FFFFFF;
+                width:75px;
+                height: 75px;
+                border-radius: 37.5px;
+
+                top:50%;
+                left:0;
+
+                transform: translateY(-50%);
+
+                box-shadow: 0 4px 16px rgba(#000000, 0.08);
+                img{
+                    width:100%;
+                    padding: 15px;
+                }
+                @include tablet{
+                
+                    left:0; 
+                    transform:translateX(0);
+                }
+                @include portrait{
+                    width:40px;
+                    height: 40px;
+                    left:0%;
+                    transform:translateX(-50%);
+                    img{
+                        padding:7px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                                         CHAT                                         *
+ *                                                                                      */
+//========================================================================================
+.chat{
+    .container{
+        .imgs{
+            position:relative;
+            .screenshot{
+
+                &.big{
+                    position:absolute;
+                    z-index: 4;
+                    right:30px;
+                    @include portrait{
+                        width:170px;
+                        left:70%; 
+                        transform:translateX(-50%);
+ 
+                    }
+                }
+
+                &.mini{
+                    width:214px;
+                    @include portrait{
+                        width:140px;
+ 
+                    }
+                }
+            }
+
+            .icon{
+
+                position:absolute;
+                background-color: #FFFFFF;
+                width:75px;
+                height: 75px;
+                border-radius: 37.5px;
+
+                top:50%;
+                right:0;
+                z-index:5;
+
+                transform: translateY(-50%);
+
+                box-shadow: 0 4px 16px rgba(#000000, 0.08);
+                img{
+                    width:100%;
+                    padding: 15px;
+                }
+
+                @include portrait{
+                    width:50px;
+                    height:50px;
+                    left:95%; 
+                    transform:translateX(-50%);
+                }
+            }
+            .circle{
+                width:283px;
+                height:283px;
+            }
+        }
+    }
+}
+    

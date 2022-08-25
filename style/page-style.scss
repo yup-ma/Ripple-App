@@ -1,0 +1,55 @@
+@import '_main.scss';
+
+//*Styles for the privacy policy and terms pages
+
+section{
+    padding: 86px 0;
+    padding-top: 160px !important;
+
+    h1{
+        text-align: center;
+    }
+    
+    p, li{
+        font-family: $font;
+        font-size: 18px;
+        color: $dark-color;
+    }
+    p{
+        padding-bottom: 20px;
+    }
+    
+    li{
+        list-style:circle;
+        margin-left: 20px;
+        padding-bottom: 10px;
+
+        &:last-of-type{
+            padding-bottom: 20px;
+        }
+    }
+    
+    .last-update{
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 86px;
+
+        @include portrait{
+            padding-bottom: 60px;
+        }
+    }
+
+    h3{
+        font-family: $titles-font-extra;
+        font-size: 18px;
+        color: $dark-color;
+        padding-bottom: 20px;
+    }
+    h4{
+        font-family: $font;
+        font-size: 18px;
+        color: $dark-color;
+        padding-bottom: 20px; 
+    }
+}
+

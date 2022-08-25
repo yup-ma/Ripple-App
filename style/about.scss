@@ -1,0 +1,374 @@
+@import '_main.scss';
+@import '_download-section.scss';
+@import '_waitlist-section.scss';
+
+//========================================================================================
+/*                                                                                      *
+ *                                         MENU                                         *
+ *                                                                                      */
+//========================================================================================
+body{
+    position:relative;
+
+}
+.top-header{
+
+    background-color: $dark-color;
+    ul{
+        
+        li{
+            a{
+                color: $light-color;
+    
+                &.button{
+                    color: $light-color;
+                    border: 2px solid $light-color;
+                }
+                &:hover{
+                    color: #d4c6ef;
+
+                }
+            }
+            #burger-icon{
+                .burger-line{
+                    background-color: $light-color;
+                }
+            }
+        } 
+    }
+
+    &.fixed{
+        background-color: rgba($dark-color, 0.9);
+
+    }
+
+    &.mobile-fixed{
+        background-color: $dark-color;
+    }
+     
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                                        HEADER                                        *
+ *                                                                                      */
+//========================================================================================
+
+header{
+    width:100%;
+    height:720px;
+
+    background-color:$dark-color;
+
+    padding-top: 250px ;
+    position:relative;
+    
+    @include portrait{
+        height:480px;
+        padding-top:142px;
+    }
+    h1{
+        color:white;
+        max-width: 20ch;
+        text-align: center;
+
+        margin:auto;
+        margin-bottom:40px;
+
+        z-index:2;
+        position:relative;
+    }
+
+    p{
+        font-family: $font;
+        color:$light-color;
+        text-align: center;
+
+        max-width: 70ch;
+        margin:auto;
+        line-height: 32px;
+
+        z-index:2;
+        position:relative;
+    }
+
+    .icon{
+        position: absolute;
+        width:100px;
+        height:100px;
+
+        bottom:-50px;
+        left:50%;
+        transform: translateX(-50%);
+
+        background-color: $primary-color;
+        border: 5px solid $light-color;
+        border-radius: 50px;
+
+        img{
+            width:100%;
+            padding:10px;
+
+        }
+
+        @include portrait{
+            width:56px;
+            height:56px;
+
+            bottom:-28px;
+        }
+    }
+    .background{
+        position:absolute;
+        top:80px;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow:hidden;
+        
+        width:100%;
+        height:640px;
+
+        @include portrait{
+            top:72px;
+            height:408px;
+        }
+        .ripple{
+            position:absolute;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%);
+    
+            width:1144px;
+            height:1144px;
+    
+            border-radius: 600px;
+            border:1px solid rgba($primary-color, 0.5);
+    
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            .ring{
+                width:50%;
+                height:50%;
+                border-radius: 600px;
+                border:1px solid rgba($primary-color, 0.5);
+                
+            }
+
+            @include portrait{
+                width:770px;
+                height:770px;
+    
+                border-radius: 385px;
+            }
+        }
+    }
+    
+}
+//========================================================================================
+/*                                                                                      *
+ *                                       SECTIONS                                       *
+ *                                                                                      */
+//========================================================================================
+section{
+    
+    width: 100%;
+    padding: 142px 0;
+
+    @include portrait{
+        // top:72px;
+        padding: 55px 0;
+    }
+    .container{
+        display:flex;
+        align-items: center;
+
+        @include portrait{
+            flex-direction: column;
+        }
+        .text-box, .imgs{
+            width:50%;
+
+            @include portrait{
+                width:100%;
+            }
+        }
+        .text-box{
+            color:$dark-color;
+            h2{
+                font-size:40px;
+                font-family: $titles-font-extra;
+
+                margin-bottom: 41px;
+            }
+    
+            p{
+                font-size:18px;
+                font-family: $font;
+                line-height: 32px;
+            }
+
+            @include portrait{
+                order:1;
+                margin-bottom: 42px;
+                h2{
+                    font-size:28px;
+                    margin-bottom: 36px;
+                }
+                p{
+                    font-size:15px;
+                    line-height: 21px;
+                }
+            }
+        }
+        .imgs{
+            img{
+                border-radius: 32px;
+                width:100%;
+            }
+
+            @include portrait{
+                order:2;
+                img{
+
+                }
+            }
+        }
+    }
+    
+}
+//========================================================================================
+/*                                                                                      *
+ *                                  OUR MISSION SECTION                                 *
+ *                                                                                      */
+//========================================================================================
+
+.our-mission{
+    padding-top: 220px;
+
+    @include portrait{
+        padding-top: 110px;
+    }
+    .imgs{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        position:relative;
+        
+        .left, .right{
+            width:50%;
+        }
+        .left{
+            margin-right:32px;
+        }
+        img{
+            position:relative;
+            z-index:2;
+
+            &:last-of-type{
+                margin-top:32px;
+            }
+        }
+
+        .ripple{
+            position:absolute;
+            width:340px;
+            height:340px;
+            border-radius:170px;
+            z-index:1;
+
+            display:flex;
+                justify-content: center;
+                align-items: center;
+            
+
+            border: 1px solid rgba($primary-color, 0.5);
+            .ring{
+                width:80%;
+                height:80%;
+                border-radius:50%;
+
+                
+
+                border: 1px solid rgba($primary-color, 0.5);
+            }
+
+            @include portrait{
+                width:196px;
+                height:196px;
+            border-radius:95.5px;
+            }
+        }
+    }
+
+    .text-box{
+        margin-left: 90px;
+        @include portrait{
+            margin-left: 0;
+        }
+    }
+}
+
+//========================================================================================
+/*                                                                                      *
+ *                               PANDEMIC IN MIND SECTION                               *
+ *                                                                                      */
+//========================================================================================
+
+.pandemic-in-mind{
+
+    .text-box{
+        margin-right: 90px;
+        z-index:2;
+        position:relative;
+        @include portrait{
+            margin-right: 0;
+        }
+
+    }
+    .imgs{
+        position:relative;
+        
+        
+        img{
+            position:relative;
+            z-index: 1;
+        }    
+    }
+
+}
+
+.circle-background{
+    position:absolute;
+    width: 100%;
+    bottom:1154px;
+    height:812px;
+    overflow: hidden;
+
+    @include portrait{
+        height:530px;
+        bottom:1254px;
+    }
+    .circle-gradient{
+
+        position:absolute;
+        top:0;
+        right:-406px;
+
+        width:812px;
+        height:812px;
+    
+        border-radius:50%;
+    
+        background: linear-gradient(0deg, rgba(#E3D8FB,1) 0%, rgba($light-color,0) 100%);
+        @include portrait{
+            width:530px;
+            height:530px;
+            border-radius:265px;
+
+            right:-265px;
+           
+        }
+    }
+}

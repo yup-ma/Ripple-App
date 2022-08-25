@@ -1,0 +1,10 @@
+section p {
+    padding-bottom: 5px;
+  }
+  
+  section li:last-of-type {
+    padding-bottom: 45px;
+  }
+  section li{
+    list-style: disc;
+  }

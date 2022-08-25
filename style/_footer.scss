@@ -1,0 +1,101 @@
+.footer-anim{
+    opacity:0;
+    transition: opacity 1s ease-out;
+    &.show{
+        opacity:1;
+    }
+}
+footer{
+    background-color:$dark-color;
+
+    color:$light-color;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 400;
+
+    height:96px;
+    
+    @include portrait{
+        height:223px; 
+    }
+    
+    .container{
+        height:100%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        .copy, ul, .icon{
+            width: 100%;
+        }
+        .copy{
+            color: #D9DBE1;
+            text-align:left;
+
+            @include portrait{
+                order:2;  
+                color: #8E8E93;
+                text-align: center;
+            }
+        }
+        p{
+            margin-top:0;
+        }
+       ul{
+           display:flex;
+           align-items: center;
+           justify-content: center;
+           list-style: none;
+
+           @include portrait{
+                order:1;  
+                flex-wrap:wrap;
+                width:100%;
+                max-width:220px;
+            }
+
+           li{
+                margin-left: 32px;
+
+                &:first-of-type{
+                    margin-left:0;
+                }
+
+                a{
+                    color: white;
+                    text-decoration: none;
+                    transition: color 0.3s ease-in-out;
+                    white-space: nowrap;
+                    &:hover{
+                        color: #d4c6ef;
+                    }
+                }
+                @include portrait{
+                    width:40%;
+                    white-space: nowrap;
+                    margin-left: 0;
+                    &:last-of-type{
+                        width:auto;
+                        margin-top: 15px;
+                        margin-left:0;
+                    } 
+                }
+           }
+           
+       }
+       .icon{
+           display:flex;
+           justify-content: flex-end;
+       }
+       @include portrait{
+           padding-top:35px;
+           padding-bottom: 50px;
+            flex-direction:column;   
+            .icon{
+                order:3;
+                justify-content: center;
+            }
+        }
+    }
+    
+
+}

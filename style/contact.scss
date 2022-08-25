@@ -1,0 +1,233 @@
+@import '_main.scss';
+
+h1{
+
+    text-align: center;
+
+}
+
+
+
+section{
+    min-height:calc(100vh - 96px);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    .content{
+        width:100%;
+
+        p{
+            font-family: $font;
+            font-size:18px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+}
+
+.hidden-frame{
+    display:none;
+}
+
+form{
+    width:100%;
+    max-width:560px;
+    
+    margin:0 auto;
+    margin-top: 64px;
+
+    .input {
+        width:100%;
+        height:60px;
+
+        margin-bottom: 35px;
+
+        position:relative;
+
+        input, textarea{
+            width:100%;
+            height:60px;
+
+            background-color: #F7F7FA;
+            border:none;
+            border-radius: 16px;
+
+            outline:none;
+            padding:20px;
+            padding-right: 40px;
+
+            font-family: $font;
+            font-weight: 500;
+            color:$dark-color;
+            font-size:17px;
+            &.focus{
+                padding-top: 40px;
+            }
+        }
+
+
+        .placeholder{
+            font-family: $font;
+            font-weight: 500;
+            font-size: 17px;
+            color: rgba(#3C3C43, 0.3);
+
+            position:absolute;
+            top:20px;
+            left:20px;
+            user-select: none;
+            cursor:text;
+            pointer-events: none;
+
+            transition: all 0.3s ease-in-out;
+            &.focus{
+                font-size: 17px;
+                top:10px;
+            }
+        }
+        
+
+        .invalid-text{
+            color: #FF2D55;
+
+            font-family: $font;
+            font-size: 12px;
+            font-weight: 500;
+
+            position:absolute;
+            bottom:-20px;
+            left: 20px;
+
+            opacity:0;
+            visibility:hidden;
+            &.show{
+                visibility:visible;
+                opacity:1;
+                animation-name: show-error;
+                animation-duration: 0.1s;
+                animation-iteration-count: 3;
+            }
+
+            @keyframes show-error {
+                0%{
+                    transform: translateY(0);
+                }
+                100%{
+                    transform: translateY(5px);
+                }
+            }
+        }
+
+        .invalid-icon{
+            width: 15px;
+            height:15px;
+            border-radius: 7.5px;
+
+            background-color: #E51934;
+
+            position:absolute;
+            right:20px;
+            top:20px;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+ 
+            visibility:hidden;
+            opacity:0;
+            pointer-events: none;
+            object, img{
+                height:10px;
+                width:100%;
+                object-fit: contain;
+                
+            }
+            transition: opacity 0.3s ease-in;
+            &.show{
+                visibility:visible;
+                opacity:1;
+                
+                
+            }
+        }
+    }
+
+    .text-area{
+        height:133px;
+        
+        textarea{
+            height:133px;
+            max-height:133px;
+            min-height:133px;
+
+            width:100%;
+
+            resize:none;
+
+            &::placeholder{
+                font-family: $font;
+                font-weight: 500;
+                font-size: 17px;
+                color: rgba(#3C3C43, 0.3);
+            }
+        }
+
+    }
+
+    button{
+        width:100%;
+        height:50px;
+        
+
+        border:none;
+        background-color: $primary-color;
+
+        border-radius: 16px;
+
+        font-family:$font;
+        font-size: 15px;
+        font-weight: 600;
+        color: #FFFFFF;
+        cursor:pointer;
+    }
+
+    .validation-badge{
+        width:100%;
+        height:44px;
+
+        background-color: rgba($primary-color, 0.1);
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: $font;
+        font-weight: 500;
+        font-size: 15px;
+
+        visibility:hidden;
+            opacity:0;
+
+        transition: opacity 0.3s ease;
+        .icon{
+            width:15px;
+            height:15px;
+            margin-left: 8px;
+            img{
+                width: 100%;
+            }
+        }
+
+        @include portrait{
+            font-size: 10px;
+        }
+
+        &.show{
+            visibility:visible;
+            opacity:1;
+        }
+    }
+}
